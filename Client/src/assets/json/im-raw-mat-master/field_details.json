@@ -73,12 +73,12 @@
     },
     "Table":{
         "label": "Table",
-        "name": "table",
+        "name": "tables",
         "width": 200,
         "group": "imRawMaterials",
         "required": true,
         "row": 3,
-        "type": "text",
+        "type": "number",
         "col": 1
     },
     "Remarks":{
