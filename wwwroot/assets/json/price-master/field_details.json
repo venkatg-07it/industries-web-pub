@@ -33,12 +33,12 @@
         "row": 1,
         "col": 3
     },
-    "Equivalent Samraj Item Code": {
-        "label": "Equivalent Samraj Item Code",
+    "Equivalent S Item Code": {
+        "label": "Equivalent S Item Code",
         "name": "equivalentsamrajitemcode",
         "width": 200,
         "group": "priceMaster",
-        "length": 27,
+        "length": 75,
         "type": "text",
         "row": 2,
         "col": 1

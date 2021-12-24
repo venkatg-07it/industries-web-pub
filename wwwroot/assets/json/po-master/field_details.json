@@ -10,7 +10,7 @@
         "name": "customerName",
         "width": 200,
         "group": "poMaster",
-        "type": "text",
+        "type": "auto",
         "row": 1,
         "col": 1
     },
@@ -20,6 +20,7 @@
         "width": 200,
         "group": "poMaster",
         "type": "text",
+        "disable": true,
         "row": 1,
         "col": 2
     },
@@ -30,7 +31,8 @@
         "group": "poMaster",
         "type": "text",
         "row": 1,
-        "col": 3
+        "col": 3,
+        "pinned": "left"
     },
     "PO Date":{
         "label": "PO Date",
@@ -38,6 +40,7 @@
         "width": 200,
         "group": "poMaster",
         "type": "date",
+        "required": true,
         "row": 2,
         "col": 1
     },
@@ -55,6 +58,7 @@
         "name": "potype",
         "width": 200,
         "group": "poMaster",
+        "required": true,
         "type": "text",
         "row": 2,
         "col": 3
@@ -74,6 +78,7 @@
         "width": 200,
         "group": "poMaster",
         "type": "text",
+        "disable": true,
         "row": 3,
         "col": 2
     },
@@ -91,18 +96,21 @@
         "name": "poitemcode",
         "width": 200,
         "group": "poMaster",
+        "required": true,
         "type": "text",
         "row": 4,
-        "col": 1
+        "col": 1        
     },
     "Item Code for Loading (75)": {
         "label": "Item Code for Loading (75)",
         "name": "itemcodeforLoading",
         "width": 200,
         "group": "poMaster",
-        "type": "text",
+        "required": true,
+        "type": "auto",
         "row": 4,
-        "col": 2
+        "col": 2,
+        "pinned": "left"
     },
     "Item Description": {
         "label": "Item Description",
@@ -117,8 +125,7 @@
         "label": "Revision Level",
         "name": "revisionLevel",
         "width": 200,
-        "group": "poMaster",
-        
+        "group": "poMaster",        
         "row": 5,
         "type": "text",
         "col": 1
@@ -128,6 +135,7 @@
         "name": "unitCostorBasicPrice",
         "width": 200,
         "group": "poMaster",
+        "required": true,
         "type": "text",
         "row": 5,
         "col": 2
@@ -137,6 +145,7 @@
         "name": "podeliveryDate",
         "width": 200,
         "group": "poMaster",
+        "required": true,
         "type": "date",
         "row": 5,
         "col": 3
@@ -146,6 +155,7 @@
         "name": "podeliveryQty",
         "width": 200,
         "group": "poMaster",
+        "required": true,
         "type": "number",
         "row": 6,
         "col": 1
@@ -163,8 +173,7 @@
         "label": "UOM",
         "name": "uom",
         "width": 100,
-        "group": "poMaster",
-        
+        "group": "poMaster",        
         "type": "number",
         "row": 6,
         "col": 3
@@ -173,8 +182,7 @@
         "label": "SUOM",
         "name": "suom",
         "width": 100,
-        "group": "poMaster",
-        
+        "group": "poMaster",        
         "type": "number",
         "row": 7,
         "col": 1
@@ -210,7 +218,7 @@
         "label": "Realistic Delivery Date",
         "name": "realisticDeliveryDate",
         "width": 200,
-        "group": "poMaster",
+        "group": "poMaster",        
         "type": "date",
         "row": 8,
         "col": 2
@@ -229,7 +237,8 @@
         "name": "customerServiceLoadDay",
         "width": 200,
         "group": "poMaster",
-        "type": "date",
+        "required": true,
+        "type": "text",
         "row": 9,
         "col": 1
     },
@@ -238,7 +247,7 @@
         "name": "planningLoadDay",
         "width": 200,
         "group": "poMaster",
-        "type": "date",
+        "type": "text",
         "row": 9,
         "col": 2
     },
@@ -251,8 +260,8 @@
         "row": 9,
         "col": 3
     },
-    "Samraj Invoice Date": {
-        "label": "Samraj Invoice Date",
+    "S Invoice Date": {
+        "label": "S Invoice Date",
         "name": "samrajInvoiceDate",
         "width": 200,
         "group": "poMaster",
@@ -292,7 +301,7 @@
         "name": "liveorRetired",
         "width": 200,
         "group": "poMaster",
-        
+        "required": true,
         "length": 1,
         "type": "text",
         "row": 11,

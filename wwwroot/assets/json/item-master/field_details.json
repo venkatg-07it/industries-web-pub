@@ -61,12 +61,12 @@
         "row": 2,
         "col": 2
     },
-    "Equivalent Samraj Item Code": {
-        "label": "Equivalent Samraj Item Code",
+    "Equivalent S Item Code": {
+        "label": "Equivalent S Item Code",
         "name": "equivalentsamrajitemcode",
         "width": 200,
         "group": "itemMaster",
-        "length": 27,
+        "length": 75,
         "type": "text",
         "row": 2,
         "col": 3

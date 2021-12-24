@@ -3,15 +3,15 @@
         "S.No.",
         "Customer Name",
         "Customer Code",
-        "PO Number with Revision History",
+        "PO Number with Revision History",        
         "PO Date",
         "PO Modified Date",
         "PO Type",
         "PO Scanned Image",
         "HSN Code",
         "Sale Order No.",
-        "PO Item Code",
-        "Item Code for Loading (75)",
+        "PO Item Code",      
+        "Item Code for Loading (75)",  
         "Item Description",
         "Revision Level",
         "Unit Cost / Basic Price",
@@ -28,7 +28,7 @@
         "Customer Service Load Day",
         "Planning Load Day",
         "Ageing",
-        "Samraj Invoice Date",
+        "S Invoice Date",
         "Dispatched Qty",
         "Dispatch-100% or Partial",
         "COT",
@@ -40,6 +40,6 @@
     ],
     "primary": [
         {"name": "ponumber", "label": "PO Number"},       
-        {"name": "itemCode", "label": "Item Code for Loading (75)"}
+        {"name": "itemcodeforLoading", "label": "Item Code for Loading (75)"}
     ]
 }

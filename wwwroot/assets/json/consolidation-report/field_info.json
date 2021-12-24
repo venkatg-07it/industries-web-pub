@@ -92,14 +92,14 @@
             "Scrap %",
             "Qty",
             "SUOM",
-            "SIZE 2 * SIZE 3/1000000 FOR TABLE 1 or SIZE 3/1000000 FOR OTHER TABLE",
+            "SIZE 2 * SIZE 3/1000000 FOR TABLE 1 or SIZE 3/1000 FOR OTHER TABLE",
             "ADD 12%",
             "TOTAL",
             "TOTAL*QTY",
             "RM S2",
             "RM S3",
-            "Sq.m/m",
-            "TOTAL 1: NO. OF SHEETS REQUIRED in no.s,TOTAL 2:LENGH REQUIRED in m"
+            "Sq-m for Table 1 m for Table 2",
+            "Table 1: NO. OF SHEETS REQUIRED in no.s, Table 2:LENGH REQUIRED in m"
         ]
     },
     "store-table-1": {
@@ -111,7 +111,7 @@
             "Size 3",
             "Table",
             "NO. OF SHEETS REQUIRED in no.s",
-            "NO.OF SHEETS PER NESTING",
+            "NO. OF SHEETS REQUIRED in no.s as per Nesting",
             "NO.OF SHEETS ISSUED",
             "REMARKS"
         ]
@@ -125,7 +125,7 @@
             "Size 3",
             "Table",
             "LENGH REQUIRED in m",            
-            "NO.OF SHEETS ISSUED",
+            "Actual Length Required in m",
             "REMARKS"
         ]
     },
