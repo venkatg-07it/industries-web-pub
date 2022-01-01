@@ -64,7 +64,7 @@ BEGIN
 			insert into [dbo].[NestingMaster](ItemcodewithNestingnum,PlanningLoadDay,POType,Process1,Process2,Itemcode,
 			Itemdescription,RMCode,RMDescription,Qty,BatchOrIndividual,Nestingnumber,FY,LoadDay,S1ofRM,Material,Nestingno,
 			NestingQty,ProcessQty,Printflag,StartPosition,EndPosition,createdby,modifiedby,createddate,updateddate) 
-			select CONCAT(typ.Itemcode,CONCAT(typ.PlanningLoadDay,'-',typ.Nestingno,'-',typ.S1ofRM,'T-',typ.Material)),
+			select (typ.Itemcode + (typ.PlanningLoadDay + '-' + typ.Nestingno + '-' + typ.S1ofRM + 'T-' + typ.Material)),
 			typ.PlanningLoadDay,typ.POType,
 			CASE
 				WHEN b.process1='LASERCUTTING' or b.process2='LASERCUTTING' or b.process3='LASERCUTTING' or
@@ -84,8 +84,8 @@ BEGIN
 				THEN 'TPP'
 			END AS Process2,typ.Itemcode,b.description,c.RMCode,d.description,
 			(SELECT SUM(FinalQty) FROM [IndustriesDB].[dbo].[ConsolidatedReport] where LoadDay=typ.PlanningLoadDay and lc1=1 and Itemcode=typ.Itemcode group by Itemcode),typ.BatchOrIndividual,
-			CONCAT(typ.PlanningLoadDay,'-',typ.Nestingno,'-',typ.S1ofRM,'T-',typ.Material),LEFT(typ.PlanningLoadDay, 4),
-			RIGHT(typ.PlanningLoadDay, 4),CONCAT(typ.S1ofRM,'T'),typ.Material,typ.Nestingno,typ.NestingQty,typ.ProcessQty,
+			(typ.PlanningLoadDay + '-' + typ.Nestingno + '-' + typ.S1ofRM + 'T-' + typ.Material),LEFT(typ.PlanningLoadDay, 4),
+			RIGHT(typ.PlanningLoadDay, 4),(typ.S1ofRM + 'T'),typ.Material,typ.Nestingno,typ.NestingQty,typ.ProcessQty,
 			0,
 			CASE
 				WHEN RIGHT(typ.Nestingno,1) = 1 THEN 1
@@ -147,7 +147,7 @@ BEGIN
 			insert into [dbo].[NestingMaster](ItemcodewithNestingnum,PlanningLoadDay,POType,Process1,Process2,Itemcode,
 			Itemdescription,RMCode,RMDescription,Qty,BatchOrIndividual,Nestingnumber,FY,LoadDay,S1ofRM,Material,Nestingno,
 			NestingQty,ProcessQty,Printflag,StartPosition,EndPosition,createdby,modifiedby,createddate,updateddate) 
-			select CONCAT(typ.Itemcode,CONCAT(typ.PlanningLoadDay,'-',typ.Nestingno,'-',typ.S1ofRM,'T-',typ.Material)),
+			select (typ.Itemcode + (typ.PlanningLoadDay + '-' + typ.Nestingno + '-' + typ.S1ofRM + 'T-' + typ.Material)),
 			typ.PlanningLoadDay,typ.POType,
 			CASE
 				WHEN b.process1='LASERCUTTING' or b.process2='LASERCUTTING' or b.process3='LASERCUTTING' or
@@ -167,8 +167,8 @@ BEGIN
 				THEN 'TPP'
 			END AS Process2,typ.Itemcode,b.description,c.RMCode,d.description,
 			(SELECT SUM(FinalQty) FROM [IndustriesDB].[dbo].[ConsolidatedReport] where LoadDay=typ.PlanningLoadDay and lc1=1 and Itemcode=typ.Itemcode group by Itemcode),typ.BatchOrIndividual,
-			CONCAT(typ.PlanningLoadDay,'-',typ.Nestingno,'-',typ.S1ofRM,'T-',typ.Material),LEFT(typ.PlanningLoadDay, 4),
-			RIGHT(typ.PlanningLoadDay, 4),CONCAT(typ.S1ofRM,'T'),typ.Material,typ.Nestingno,typ.NestingQty,typ.ProcessQty,
+			(typ.PlanningLoadDay + '-' + typ.Nestingno + '-' + typ.S1ofRM + 'T-' + typ.Material),LEFT(typ.PlanningLoadDay, 4),
+			RIGHT(typ.PlanningLoadDay, 4),(typ.S1ofRM + 'T'),typ.Material,typ.Nestingno,typ.NestingQty,typ.ProcessQty,
 			typ.Printflag,
 			CASE
 				WHEN RIGHT(typ.Nestingno,1) = 1 THEN 1
