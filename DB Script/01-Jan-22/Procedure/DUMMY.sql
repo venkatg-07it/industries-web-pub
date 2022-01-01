@@ -9,7 +9,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE PROCEDURE [dbo].[spDeleteDummyMaster]
+ALTER PROCEDURE [dbo].[spDeleteDummyMaster]
 AS
 BEGIN	
 	SET NOCOUNT ON;	
@@ -27,7 +27,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE PROCEDURE [dbo].[spDummyAdjusment]
+ALTER PROCEDURE [dbo].[spDummyAdjusment]
 @Loadday AS varchar(25)
 AS
 BEGIN	
@@ -181,7 +181,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE PROCEDURE [dbo].[spDummyConsolidateReport]
+ALTER PROCEDURE [dbo].[spDummyConsolidateReport]
 @Loadday AS varchar(25)
 AS
 BEGIN	
@@ -274,7 +274,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE PROCEDURE [dbo].[spDummyInsertNestingMaster]
+ALTER PROCEDURE [dbo].[spDummyInsertNestingMaster]
 @typDummyNestingMaster AS dbo.typeDummyNestingMaster READONLY
 AS
 BEGIN	
@@ -297,7 +297,7 @@ BEGIN
 			insert into [dbo].[NestingMaster](ItemcodewithNestingnum,PlanningLoadDay,POType,Process1,Process2,Itemcode,
 			Itemdescription,RMCode,RMDescription,Qty,BatchOrIndividual,Nestingnumber,FY,LoadDay,S1ofRM,Material,Nestingno,
 			NestingQty,ProcessQty,Printflag,StartPosition,EndPosition,createdby,modifiedby,createddate,updateddate) 
-			select (typ.Itemcode + (typ.PlanningLoadDay + '-',typ.Nestingno + '-' + typ.S1ofRM + 'T-'+ typ.Material)),
+			select (typ.Itemcode + (typ.PlanningLoadDay + '-' + typ.Nestingno + '-' + typ.S1ofRM + 'T-'+ typ.Material)),
 			typ.PlanningLoadDay,typ.POType,
 			CASE
 				WHEN b.process1='LASERCUTTING' or b.process2='LASERCUTTING' or b.process3='LASERCUTTING' or
@@ -367,8 +367,15 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
+/****** Object:  StoredProcedure [dbo].[spInsertDummyMaster]    Script Date: 01-Jan-22 10:41:14 AM ******/
+SET ANSI_NULLS ON
+GO
 
-CREATE PROCEDURE [dbo].[spInsertDummyMaster]
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+ALTER PROCEDURE [dbo].[spInsertDummyMaster]
 @typDummyMaster AS dbo.typeDummyMaster READONLY
 AS
 BEGIN	
@@ -381,14 +388,14 @@ BEGIN
 			CustomerServiceLoadDay,PlanningLoadDay,Ageing,LiveorRetired,ReasonforLoading,Status,CurrentQty,AdjustedinPOLoadday1,AdjustedQty1,
 			AdjustedinPOLoadday2,AdjustedQty2,AdjustedinPOLoadday3,AdjustedQty3,AdjustedinPOLoadday4,AdjustedQty4,AdjustedinPOLoadday5,
 			AdjustedQty5,createdby,modifiedby,createddate,updateddate) 
-			select (('D' + typ.CustomerServiceLoadDay) + typ.ItemcodeforLoading),typ.CustomerName,c.CustomerCode,typ.ItemcodeforLoading,i.description,i.revisionlevel,typ.DeliveryQty,i.uom,i.suom,
-			typ.CustomerServiceLoadDay,('D' + typ.PlanningLoadDay),typ.Ageing,typ.LiveorRetired,typ.ReasonforLoading,typ.Status,typ.DeliveryQty,typ.AdjustedinPOLoadday1,typ.AdjustedQty1,
+			select Concat(Concat('D',typ.CustomerServiceLoadDay),typ.ItemcodeforLoading),typ.CustomerName,c.CustomerCode,typ.ItemcodeforLoading,i.description,i.revisionlevel,typ.DeliveryQty,i.uom,i.suom,
+			typ.CustomerServiceLoadDay,Concat('D',typ.PlanningLoadDay),typ.Ageing,typ.LiveorRetired,typ.ReasonforLoading,typ.Status,typ.DeliveryQty,typ.AdjustedinPOLoadday1,typ.AdjustedQty1,
 			typ.AdjustedinPOLoadday2,typ.AdjustedQty2,typ.AdjustedinPOLoadday3,typ.AdjustedQty3,typ.AdjustedinPOLoadday4,typ.AdjustedQty4,typ.AdjustedinPOLoadday5,
 			typ.AdjustedQty5,typ.createdby,typ.modifiedby,GETDATE(),GETDATE() from @typDummyMaster typ,dbo.CustomerMaster c,dbo.ItemMaster i
 			where typ.CustomerName=c.CustomerName and typ.ItemcodeforLoading=i.itemcode and typ.ItemcodeforLoading in (select itemcode from [dbo].[ItemMaster] where LiveorRetired='L' and lc1=1 and lc2='F') and typ.ItemcodeforLoading in (select ItemCode from [dbo].[ComponentMaster])
 
-			select (('D' + CustomerServiceLoadDay) + ItemcodeforLoading) 'LoaddaywithItemcode',CustomerName,CustomerCode,ItemcodeforLoading,ITEMDESCRIPTION,RevisionLevel,DeliveryQty,UOM,SUOM,
-			CustomerServiceLoadDay 'CustomerServiceLoadDay',('D' + PlanningLoadDay) 'PlanningLoadDay',Ageing,LiveorRetired,ReasonforLoading,Status,CurrentQty,AdjustedinPOLoadday1,AdjustedQty1,
+			select Concat(Concat('D',CustomerServiceLoadDay),ItemcodeforLoading) 'LoaddaywithItemcode',CustomerName,CustomerCode,ItemcodeforLoading,ITEMDESCRIPTION,RevisionLevel,DeliveryQty,UOM,SUOM,
+			CustomerServiceLoadDay 'CustomerServiceLoadDay',Concat('D',PlanningLoadDay) 'PlanningLoadDay',Ageing,LiveorRetired,ReasonforLoading,Status,CurrentQty,AdjustedinPOLoadday1,AdjustedQty1,
 			AdjustedinPOLoadday2,AdjustedQty2,AdjustedinPOLoadday3,AdjustedQty3,AdjustedinPOLoadday4,AdjustedQty4,AdjustedinPOLoadday5,
 			AdjustedQty5,createdby,modifiedby,createddate,updateddate from @typDummyMaster typ
 			where typ.ItemcodeforLoading not in (select itemcode from [dbo].[ItemMaster] where LiveorRetired='L' and lc1=1 and lc2='F') or typ.CustomerName not in (select CustomerName from dbo.CustomerMaster) or typ.ItemcodeforLoading not in (select ItemCode from [dbo].[ComponentMaster])
@@ -417,7 +424,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE PROCEDURE [dbo].[spSelectDummyApprovedLoaddayList]
+ALTER PROCEDURE [dbo].[spSelectDummyApprovedLoaddayList]
 AS
 BEGIN	
 	SET NOCOUNT ON;	
@@ -438,7 +445,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE PROCEDURE [dbo].[spSelectDummyLoaddayGroupList]
+ALTER PROCEDURE [dbo].[spSelectDummyLoaddayGroupList]
 @Loadday AS varchar(25)
 AS
 BEGIN
@@ -455,7 +462,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE PROCEDURE [dbo].[spSelectDummyLoadDayList]
+ALTER PROCEDURE [dbo].[spSelectDummyLoadDayList]
 @Loadday AS varchar(25)
 AS
 BEGIN	
@@ -474,7 +481,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE PROCEDURE [dbo].[spSelectDummyMaster]
+ALTER PROCEDURE [dbo].[spSelectDummyMaster]
 AS
 BEGIN	
 	SET NOCOUNT ON;	
@@ -495,7 +502,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE PROCEDURE [dbo].[spSelectDummyPOAdjust]
+ALTER PROCEDURE [dbo].[spSelectDummyPOAdjust]
 @Loadday AS varchar(25)
 AS
 BEGIN	
@@ -515,7 +522,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE PROCEDURE [dbo].[spSelectDummyUnApprovedList]
+ALTER PROCEDURE [dbo].[spSelectDummyUnApprovedList]
 AS
 BEGIN	
 	SET NOCOUNT ON;	
@@ -536,7 +543,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE PROCEDURE [dbo].[spSelectDummyUnLoaddayList]
+ALTER PROCEDURE [dbo].[spSelectDummyUnLoaddayList]
 AS
 BEGIN	
 	SET NOCOUNT ON;	
@@ -557,7 +564,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE PROCEDURE [dbo].[spUpdateDummyMaster]
+ALTER PROCEDURE [dbo].[spUpdateDummyMaster]
 @typDummyMaster AS dbo.typeDummyMaster READONLY
 AS
 BEGIN	
