@@ -1,13 +1,13 @@
 USE [IndustriesDB]
 GO
 
-ALTER TABLE [dbo].[NestingMaster] ALTER COLUMN StartPosition int;
-ALTER TABLE [dbo].[NestingMaster] ALTER COLUMN EndPosition int;
-ALTER TABLE [dbo].[NestingMaster] ALTER COLUMN Printflag int;
+ALTER TABLE [dbo].[NestingMaster] ADD StartPosition int;
+ALTER TABLE [dbo].[NestingMaster] ADD EndPosition int;
+ALTER TABLE [dbo].[NestingMaster] ADD Printflag int;
 
-ALTER TABLE [dbo].[NestingMasterHistory] ALTER COLUMN StartPosition int;
-ALTER TABLE [dbo].[NestingMasterHistory] ALTER COLUMN EndPosition int;
-ALTER TABLE [dbo].[NestingMasterHistory] ALTER COLUMN Printflag int;
+ALTER TABLE [dbo].[NestingMasterHistory] ADD StartPosition int;
+ALTER TABLE [dbo].[NestingMasterHistory] ADD EndPosition int;
+ALTER TABLE [dbo].[NestingMasterHistory] ADD Printflag int;
 
 /****** Object:  StoredProcedure [dbo].[spSelectNestingPrintDetails]    Script Date: 31-Dec-21 8:14:33 PM ******/
 SET ANSI_NULLS ON
@@ -17,7 +17,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE OR ALTER PROCEDURE [dbo].[spSelectNestingPrintDetails]
+CREATE PROCEDURE [dbo].[spSelectNestingPrintDetails]
 @Loadday AS varchar(25),
 @NestingNum AS varchar(25)
 AS
