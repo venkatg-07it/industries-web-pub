@@ -367,13 +367,6 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-/****** Object:  StoredProcedure [dbo].[spInsertDummyMaster]    Script Date: 01-Jan-22 10:41:14 AM ******/
-SET ANSI_NULLS ON
-GO
-
-SET QUOTED_IDENTIFIER ON
-GO
-
 
 ALTER PROCEDURE [dbo].[spInsertDummyMaster]
 @typDummyMaster AS dbo.typeDummyMaster READONLY
@@ -388,14 +381,14 @@ BEGIN
 			CustomerServiceLoadDay,PlanningLoadDay,Ageing,LiveorRetired,ReasonforLoading,Status,CurrentQty,AdjustedinPOLoadday1,AdjustedQty1,
 			AdjustedinPOLoadday2,AdjustedQty2,AdjustedinPOLoadday3,AdjustedQty3,AdjustedinPOLoadday4,AdjustedQty4,AdjustedinPOLoadday5,
 			AdjustedQty5,createdby,modifiedby,createddate,updateddate) 
-			select Concat(Concat('D',typ.CustomerServiceLoadDay),typ.ItemcodeforLoading),typ.CustomerName,c.CustomerCode,typ.ItemcodeforLoading,i.description,i.revisionlevel,typ.DeliveryQty,i.uom,i.suom,
-			typ.CustomerServiceLoadDay,Concat('D',typ.PlanningLoadDay),typ.Ageing,typ.LiveorRetired,typ.ReasonforLoading,typ.Status,typ.DeliveryQty,typ.AdjustedinPOLoadday1,typ.AdjustedQty1,
+			select (('D' + typ.CustomerServiceLoadDay) + typ.ItemcodeforLoading),typ.CustomerName,c.CustomerCode,typ.ItemcodeforLoading,i.description,i.revisionlevel,typ.DeliveryQty,i.uom,i.suom,
+			typ.CustomerServiceLoadDay,('D' + typ.PlanningLoadDay),typ.Ageing,typ.LiveorRetired,typ.ReasonforLoading,typ.Status,typ.DeliveryQty,typ.AdjustedinPOLoadday1,typ.AdjustedQty1,
 			typ.AdjustedinPOLoadday2,typ.AdjustedQty2,typ.AdjustedinPOLoadday3,typ.AdjustedQty3,typ.AdjustedinPOLoadday4,typ.AdjustedQty4,typ.AdjustedinPOLoadday5,
 			typ.AdjustedQty5,typ.createdby,typ.modifiedby,GETDATE(),GETDATE() from @typDummyMaster typ,dbo.CustomerMaster c,dbo.ItemMaster i
 			where typ.CustomerName=c.CustomerName and typ.ItemcodeforLoading=i.itemcode and typ.ItemcodeforLoading in (select itemcode from [dbo].[ItemMaster] where LiveorRetired='L' and lc1=1 and lc2='F') and typ.ItemcodeforLoading in (select ItemCode from [dbo].[ComponentMaster])
 
-			select Concat(Concat('D',CustomerServiceLoadDay),ItemcodeforLoading) 'LoaddaywithItemcode',CustomerName,CustomerCode,ItemcodeforLoading,ITEMDESCRIPTION,RevisionLevel,DeliveryQty,UOM,SUOM,
-			CustomerServiceLoadDay 'CustomerServiceLoadDay',Concat('D',PlanningLoadDay) 'PlanningLoadDay',Ageing,LiveorRetired,ReasonforLoading,Status,CurrentQty,AdjustedinPOLoadday1,AdjustedQty1,
+			select (('D' + CustomerServiceLoadDay) + ItemcodeforLoading) 'LoaddaywithItemcode',CustomerName,CustomerCode,ItemcodeforLoading,ITEMDESCRIPTION,RevisionLevel,DeliveryQty,UOM,SUOM,
+			CustomerServiceLoadDay 'CustomerServiceLoadDay',('D' + PlanningLoadDay) 'PlanningLoadDay',Ageing,LiveorRetired,ReasonforLoading,Status,CurrentQty,AdjustedinPOLoadday1,AdjustedQty1,
 			AdjustedinPOLoadday2,AdjustedQty2,AdjustedinPOLoadday3,AdjustedQty3,AdjustedinPOLoadday4,AdjustedQty4,AdjustedinPOLoadday5,
 			AdjustedQty5,createdby,modifiedby,createddate,updateddate from @typDummyMaster typ
 			where typ.ItemcodeforLoading not in (select itemcode from [dbo].[ItemMaster] where LiveorRetired='L' and lc1=1 and lc2='F') or typ.CustomerName not in (select CustomerName from dbo.CustomerMaster) or typ.ItemcodeforLoading not in (select ItemCode from [dbo].[ComponentMaster])
