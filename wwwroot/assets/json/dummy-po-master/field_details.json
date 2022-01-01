@@ -11,6 +11,7 @@
         "width": 200,
         "group": "dummyPoMaster",
         "type": "auto",
+        "required": true,
         "row": 1,
         "col": 1
     },
@@ -23,80 +24,17 @@
         "disable": true,
         "row": 1,
         "col": 2
-    },
-    "PO Number with Revision History":{
-        "label": "PO Number with Revision History",
-        "name": "ponumber",
-        "width": 200,
-        "group": "dummyPoMaster",
-        "type": "text",
-        "row": 1,
-        "col": 3,
-        "pinned": "left"
-    },
-    "PO Date":{
-        "label": "PO Date",
-        "name": "podate",
-        "width": 200,
-        "group": "dummyPoMaster",
-        "type": "date",
-        "row": 2,
-        "col": 1
-    },
-    "PO Modified Date": {
-        "label": "PO Modified Date",
-        "name": "pomodifiedDate",
-        "width": 200,
-        "group": "dummyPoMaster",
-        "type": "date",
-        "row": 2,
-        "col": 2
-    },
-    "PO Type": {
-        "label": "PO Type",
-        "name": "potype",
-        "width": 200,
-        "group": "dummyPoMaster",
-        "type": "text",
-        "row": 2,
-        "col": 3
     },    
-    "HSN Code": {
-        "label": "HSN Code",
-        "name": "hsncode",
-        "width": 200,
-        "group": "dummyPoMaster",
-        "type": "text",
-        "disable": true,
-        "row": 3,
-        "col": 2
-    },
-    "Sale Order No.": {
-        "label": "Sale Order No.",
-        "name": "salesOrderNumber",
-        "width": 200,
-        "group": "dummyPoMaster",
-        "type": "text",
-        "row": 3,
-        "col": 3
-    },
-    "PO Item Code": {
-        "label": "PO Item Code",
-        "name": "poitemcode",
-        "width": 200,
-        "group": "dummyPoMaster",
-        "type": "text",
-        "row": 4,
-        "col": 1        
-    },
     "Item Code for Loading (75)": {
         "label": "Item Code for Loading (75)",
         "name": "itemcodeforLoading",
         "width": 200,
         "group": "dummyPoMaster",
+        "required": true,
+        "readonly": true,
         "type": "auto",
-        "row": 4,
-        "col": 2,
+        "row": 1,
+        "col": 3,
         "pinned": "left"
     },
     "Item Description": {
@@ -116,43 +54,17 @@
         "row": 5,
         "type": "text",
         "col": 1
-    },
-    "Unit Cost / Basic Price": {
-        "label": "Unit Cost / Basic Price",
-        "name": "unitCostorBasicPrice",
-        "width": 200,
-        "group": "dummyPoMaster",
-        "type": "text",
-        "row": 5,
-        "col": 2
-    },
-    "PO Delivery Date": {
-        "label": "PO Delivery Date",
-        "name": "podeliveryDate",
-        "width": 200,
-        "group": "dummyPoMaster",
-        "type": "date",
-        "row": 5,
-        "col": 3
-    },
+    },   
     "Delivery Qty": {
         "label": "Delivery Qty",
-        "name": "podeliveryQty",
+        "name": "deliveryQty",
+        "required": true,
         "width": 200,
         "group": "dummyPoMaster",
         "type": "number",
         "row": 6,
         "col": 1
-    },
-    "Total Sale Price": {
-        "label": "Total Sale Price",
-        "name": "totalSalePrice",
-        "width": 200,
-        "group": "dummyPoMaster",
-        "type": "number",
-        "row": 6,
-        "col": 2
-    },
+    },   
     "UOM":{
         "label": "UOM",
         "name": "uom",
@@ -170,58 +82,15 @@
         "type": "number",
         "row": 7,
         "col": 1
-    },
-    "Tax Set": {
-        "label": "Tax Set",
-        "name": "taxset",
-        "width": 200,
-        "group": "dummyPoMaster",
-        "type": "text",
-        "row": 7,
-        "col": 2
-    },
-    "Tax Class": {
-        "label": "Tax Class",
-        "name": "taxclass",
-        "width": 200,
-        "group": "dummyPoMaster",
-        "type": "text",
-        "row": 7,
-        "col": 3
-    },
-    "Full Address": {
-        "label": "Full Address",
-        "name": "fullAddress",
-        "width": 200,
-        "group": "dummyPoMaster",
-        "type": "text",
-        "row": 8,
-        "col": 1
-    },
-    "Realistic Delivery Date": {
-        "label": "Realistic Delivery Date",
-        "name": "realisticDeliveryDate",
-        "width": 200,
-        "group": "dummyPoMaster",
-        "type": "date",
-        "row": 8,
-        "col": 2
-    },
-    "Comments": {
-        "label": "Comments",
-        "name": "remarks",
-        "width": 200,
-        "group": "dummyPoMaster",
-        "type": "text",
-        "row": 8,
-        "col": 3
-    },
+    },    
     "Customer Service Load Day": {
         "label": "Customer Service Load Day",
         "name": "customerServiceLoadDay",
         "width": 200,
         "group": "dummyPoMaster",
         "type": "text",
+        "required": true,
+        "readonly": true,
         "row": 9,
         "col": 1
     },
@@ -242,43 +111,7 @@
         "type": "text",
         "row": 9,
         "col": 3
-    },
-    "S Invoice Date": {
-        "label": "S Invoice Date",
-        "name": "samrajInvoiceDate",
-        "width": 200,
-        "group": "dummyPoMaster",
-        "type": "date",
-        "row": 10,
-        "col": 1
-    },
-    "Dispatched Qty": {
-        "label": "Dispatched Qty",
-        "name": "dispatchedQty",
-        "width": 200,
-        "group": "dummyPoMaster",
-        "type": "number",
-        "row": 10,
-        "col": 2
-    },
-    "Dispatch-100% or Partial": {
-        "label": "Dispatch-100% or Partial",
-        "name": "dispatch100PercentorPartial",
-        "width": 200,
-        "group": "dummyPoMaster",
-        "type": "text",
-        "row": 10,
-        "col": 3
-    },
-    "COT": {
-        "label": "COT",
-        "name": "cot",
-        "width": 200,
-        "group": "dummyPoMaster",
-        "type": "text",
-        "row": 11,
-        "col": 1
-    },
+    },    
     "Live/Retired": {
         "label": "Live/Retired",
         "name": "liveorRetired",
@@ -286,106 +119,129 @@
         "group": "dummyPoMaster",        
         "length": 1,
         "type": "text",
+        "default": "L",
+        "required": true,
+        "row": 11,
+        "col": 2
+    },
+    "Status": {
+        "label": "Status",
+        "name": "status",
+        "width": 200,
+        "group": "dummyPoMaster",        
+        "length": 1,
+        "type": "text",
+        "disable": true,
+        "row": 11,
+        "col": 2
+    },
+    "Reason for Loading": {
+        "label": "Reason for Loading",
+        "name": "reasonforLoading",
+        "width": 200,
+        "group": "dummyPoMaster",        
+        "required": true,
+        "type": "text",
         "row": 11,
         "col": 2
     },
     "Adjusted in PO Load day-1": {
         "label": "Adjusted in PO Load day-1",
-        "name": "adjustedPoLoadday1",
+        "name": "adjustedinPoloadday1",
         "width": 200,
-        "group": "dummyPoMaster",        
-        "length": 1,
+        "group": "dummyPoMaster",                
         "type": "text",
+        "disable": true,
         "row": 11,
         "col": 2
     },
     "Load day 1 Qty": {
         "label": "Load day 1 Qty",
-        "name": "loadday1Qtry",
+        "name": "adjustedQty1",
         "width": 200,
-        "group": "dummyPoMaster",        
-        "length": 1,
+        "group": "dummyPoMaster",                
         "type": "number",
+        "disable": true,
         "row": 11,
         "col": 2
     },
     "Adjusted in PO Load day-2": {
         "label": "Adjusted in PO Load day-2",
-        "name": "adjustedPoLoadday2",
+        "name": "adjustedinPoloadday2",
         "width": 200,
-        "group": "dummyPoMaster",        
-        "length": 1,
+        "group": "dummyPoMaster",                
         "type": "text",
+        "disable": true,
         "row": 11,
         "col": 2
     },
     "Load day 2 Qty": {
         "label": "Load day 2 Qty",
-        "name": "loadday2Qtry",
+        "name": "adjustedQty2",
         "width": 200,
-        "group": "dummyPoMaster",        
-        "length": 1,
+        "group": "dummyPoMaster",                
         "type": "number",
+        "disable": true,
         "row": 11,
         "col": 2
     },
     "Adjusted in PO Load day-3": {
         "label": "Adjusted in PO Load day-3",
-        "name": "adjustedPoLoadday3",
+        "name": "adjustedinPoloadday3",
         "width": 200,
-        "group": "dummyPoMaster",        
-        "length": 1,
+        "group": "dummyPoMaster",                
         "type": "text",
+        "disable": true,
         "row": 11,
         "col": 2
     },
     "Load day 3 Qty": {
         "label": "Load day 3 Qty",
-        "name": "loadday3Qtry",
+        "name": "adjustedQty3",
         "width": 200,
         "group": "dummyPoMaster",        
-        "length": 1,
         "type": "number",
+        "disable": true,
         "row": 11,
         "col": 2
     },
     "Adjusted in PO Load day-4": {
         "label": "Adjusted in PO Load day-4",
-        "name": "adjustedPoLoadday4",
+        "name": "adjustedinPoloadday4",
         "width": 200,
-        "group": "dummyPoMaster",        
-        "length": 1,
+        "group": "dummyPoMaster",         
         "type": "text",
+        "disable": true,
         "row": 11,
         "col": 2
     },
     "Load day 4 Qty": {
         "label": "Load day 4 Qty",
-        "name": "loadday4Qtry",
+        "name": "adjustedQty4",
         "width": 200,
-        "group": "dummyPoMaster",        
-        "length": 1,
+        "group": "dummyPoMaster",                
         "type": "number",
+        "disable": true,
         "row": 11,
         "col": 2
     },
     "Adjusted in PO Load day-5": {
         "label": "Adjusted in PO Load day-5",
-        "name": "adjustedPoLoadday5",
+        "name": "adjustedinPoloadday5",
         "width": 200,
         "group": "dummyPoMaster",        
-        "length": 1,
         "type": "text",
+        "disable": true,
         "row": 11,
         "col": 2
     },
     "Load day 5 Qty": {
         "label": "Load day 5 Qty",
-        "name": "loadday5Qtry",
+        "name": "adjustedQty5",
         "width": 200,
-        "group": "dummyPoMaster",        
-        "length": 1,
+        "group": "dummyPoMaster",                
         "type": "number",
+        "disable": true,
         "row": 11,
         "col": 2
     },
@@ -394,7 +250,7 @@
         "name": "remarks",
         "width": 200,
         "group": "dummyPoMaster",
-        "type": "text",
+        "type": "text",        
         "row": 11,
         "col": 3
     }

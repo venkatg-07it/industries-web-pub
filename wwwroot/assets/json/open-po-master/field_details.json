@@ -11,6 +11,7 @@
         "width": 200,
         "group": "openPoMaster",
         "type": "auto",
+        "required": true,
         "row": 1,
         "col": 1
     },
@@ -30,6 +31,7 @@
         "width": 200,
         "group": "openPoMaster",
         "type": "text",
+        "required": true,
         "row": 1,
         "col": 3,
         "pinned": "left"
@@ -59,6 +61,7 @@
         "width": 200,
         "group": "openPoMaster",
         "type": "text",
+        "required": true,
         "row": 4,
         "col": 1        
     },
@@ -68,6 +71,7 @@
         "width": 200,
         "group": "openPoMaster",
         "type": "auto",
+        "required": true,
         "row": 4,
         "col": 2,
         "pinned": "left"
@@ -96,6 +100,7 @@
         "name": "unitCostorBasicPrice",
         "width": 200,
         "group": "openPoMaster",
+        "required": true,
         "type": "text",
         "row": 5,
         "col": 2        
@@ -106,6 +111,7 @@
         "width": 200,
         "group": "openPoMaster",
         "type": "number",
+        "required": true,
         "row": 6,
         "col": 1        
     },
@@ -162,22 +168,15 @@
         "type": "text",
         "row": 8,
         "col": 1
-    },    
-    "S Invoice Date": {
-        "label": "S Invoice Date",
-        "name": "samrajInvoiceDate",
-        "width": 200,
-        "group": "openPoMaster",
-        "type": "date",
-        "row": 10,
-        "col": 1
-    },    
+    },       
     "Live/Retired": {
         "label": "Live/Retired",
         "name": "liveorRetired",
         "width": 200,
         "group": "openPoMaster",        
         "length": 1,
+        "required": true,
+        "default": "L",
         "type": "text",
         "row": 11,
         "col": 2

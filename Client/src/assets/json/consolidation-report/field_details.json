@@ -580,17 +580,17 @@
         "fields": {
             "Item Code":{
                 "label": "Item Code",
-                "name": "itemCode",
+                "name": "itemcode",
                 "width": 250                
             },
             "Item Description":{
                 "label": "Item Description",
-                "name": "itemDescription",
+                "name": "itemdescription",
                 "width": 250                
             },
             "RM Code":{
                 "label": "RM Code",
-                "name": "itemCode",
+                "name": "rmCode",
                 "width": 250                
             },
             "RM Description":{
@@ -600,12 +600,12 @@
             },
             "Level Code 1":{
                 "label": "Level Code 1",
-                "name": "levelCode1",
+                "name": "lc1",
                 "width": 250                
             },
             "Level Code 2":{
                 "label": "Level Code 2",
-                "name": "levelCode2",
+                "name": "lc2",
                 "width": 250                
             },
             "Size 1":{
@@ -625,17 +625,17 @@
             },
             "TOTAL QTY":{
                 "label": "TOTAL QTY",
-                "name": "TotalQty",
+                "name": "totalQty",
                 "width": 200                
             },
             "DUMMY PO QTY":{
                 "label": "DUMMY PO QTY",
-                "name": "dummyPoQty",
+                "name": "dummyPOQty",
                 "width": 200                
             },
             "BALANCE DUMMY PO QTY":{
                 "label": "BALANCE DUMMY PO QTY",
-                "name": "balanceDummyPoQty",
+                "name": "balanceDummyPOQty",
                 "width": 200                
             },
             "Process 1":{
@@ -715,42 +715,42 @@
             },
             "FINISH TYPE":{
                 "label": "FINISH TYPE",
-                "name": "finishType",
+                "name": "finishtype",
                 "width": 230                
             },
             "SURFACE PREPARATION":{
                 "label": "SURFACE PREPARATION",
-                "name": "surfacePreparation",
+                "name": "surfacepreparation",
                 "width": 230                
             },
             "PRIME COLOUR":{
                 "label": "PRIME COLOUR",
-                "name": "primeColour",
+                "name": "primercolour",
                 "width": 230                
             },
             "PRIME DFT":{
                 "label": "PRIME DFT",
-                "name": "primeDFT",
+                "name": "primerDft",
                 "width": 230                
             },
             "IMO COLOUR":{
                 "label": "IMO COLOUR",
-                "name": "imoColour",
+                "name": "imocolour",
                 "width": 230                
             },
             "IMO DFT":{
                 "label": "IMO DFT",
-                "name": "imoDFT",
+                "name": "imodft",
                 "width": 230                
             },
             "TOP COAT COLOUR":{
                 "label": "TOP COAT COLOUR",
-                "name": "totCoatColour",
+                "name": "topCoatColour",
                 "width": 230                
             },
             "TOP COAT DFT":{
                 "label": "TOP COAT DFT",
-                "name": "totalCoatDFT",
+                "name": "topCoatDft",
                 "width": 230                
             },
             "REMARKS":{
