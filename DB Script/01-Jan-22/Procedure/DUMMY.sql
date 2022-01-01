@@ -287,9 +287,9 @@ BEGIN
 			CustomerServiceLoadDay,PlanningLoadDay,Ageing,LiveorRetired,ReasonforLoading,Status,AdjustedinPOLoadday1,AdjustedQty1,
 			AdjustedinPOLoadday2,AdjustedQty2,AdjustedinPOLoadday3,AdjustedQty3,AdjustedinPOLoadday4,AdjustedQty4,AdjustedinPOLoadday5,
 			AdjustedQty5,createdby,modifiedby,createddate,updateddate) 
-			select Concat(Concat('D',typ.PlanningLoadDay),typ.Itemcode),i.customername,c.CustomerCode,typ.Itemcode,i.description,i.revisionlevel,
+			select (('D' + typ.PlanningLoadDay) + typ.Itemcode),i.customername,c.CustomerCode,typ.Itemcode,i.description,i.revisionlevel,
 			(SELECT SUM(FinalQty) FROM [IndustriesDB].[dbo].[ConsolidatedReport] where LoadDay=typ.PlanningLoadDay and lc1=1 and Itemcode=typ.Itemcode group by Itemcode),i.uom,i.suom,
-			null,Concat('D',typ.PlanningLoadDay),null,'L','Extra added for Nesting for Utilisation','Approved',null,null,null,null,null,null,null,null,null,null,
+			null,('D' + typ.PlanningLoadDay),null,'L','Extra added for Nesting for Utilisation','Approved',null,null,null,null,null,null,null,null,null,null,
 			typ.createdby,typ.modifiedby,GETDATE(),GETDATE() from @typDummyNestingMaster typ,dbo.CustomerMaster c,dbo.ItemMaster i
 			where i.customername=c.CustomerName and typ.Itemcode=i.itemcode and typ.Itemcode in (select itemcode from [dbo].[ItemMaster] where LiveorRetired='L' and lc1=1 and lc2='F') and typ.Itemcode in (select ItemCode from [dbo].[ComponentMaster])
 
@@ -297,7 +297,7 @@ BEGIN
 			insert into [dbo].[NestingMaster](ItemcodewithNestingnum,PlanningLoadDay,POType,Process1,Process2,Itemcode,
 			Itemdescription,RMCode,RMDescription,Qty,BatchOrIndividual,Nestingnumber,FY,LoadDay,S1ofRM,Material,Nestingno,
 			NestingQty,ProcessQty,Printflag,StartPosition,EndPosition,createdby,modifiedby,createddate,updateddate) 
-			select CONCAT(typ.Itemcode,CONCAT(typ.PlanningLoadDay,'-',typ.Nestingno,'-',typ.S1ofRM,'T-',typ.Material)),
+			select (typ.Itemcode + (typ.PlanningLoadDay + '-',typ.Nestingno + '-' + typ.S1ofRM + 'T-'+ typ.Material)),
 			typ.PlanningLoadDay,typ.POType,
 			CASE
 				WHEN b.process1='LASERCUTTING' or b.process2='LASERCUTTING' or b.process3='LASERCUTTING' or
@@ -317,8 +317,8 @@ BEGIN
 				THEN 'TPP'
 			END AS Process2,typ.Itemcode,b.description,c.RMCode,d.description,
 			(SELECT SUM(FinalQty) FROM [IndustriesDB].[dbo].[ConsolidatedReport] where LoadDay=typ.PlanningLoadDay and lc1=1 and Itemcode=typ.Itemcode group by Itemcode),typ.BatchOrIndividual,
-			CONCAT(typ.PlanningLoadDay,'-',typ.Nestingno,'-',typ.S1ofRM,'T-',typ.Material),LEFT(typ.PlanningLoadDay, 4),
-			RIGHT(typ.PlanningLoadDay, 4),CONCAT(typ.S1ofRM,'T'),typ.Material,typ.Nestingno,typ.NestingQty,typ.ProcessQty,
+			(typ.PlanningLoadDay + '-' + typ.Nestingno + '-' + typ.S1ofRM + 'T-' + typ.Material),LEFT(typ.PlanningLoadDay, 4),
+			RIGHT(typ.PlanningLoadDay, 4),(typ.S1ofRM + 'T'),typ.Material,typ.Nestingno,typ.NestingQty,typ.ProcessQty,
 			0,
 			CASE
 				WHEN RIGHT(typ.Nestingno,1) = 1 THEN 1
@@ -381,14 +381,14 @@ BEGIN
 			CustomerServiceLoadDay,PlanningLoadDay,Ageing,LiveorRetired,ReasonforLoading,Status,CurrentQty,AdjustedinPOLoadday1,AdjustedQty1,
 			AdjustedinPOLoadday2,AdjustedQty2,AdjustedinPOLoadday3,AdjustedQty3,AdjustedinPOLoadday4,AdjustedQty4,AdjustedinPOLoadday5,
 			AdjustedQty5,createdby,modifiedby,createddate,updateddate) 
-			select Concat(Concat('D',typ.CustomerServiceLoadDay),typ.ItemcodeforLoading),typ.CustomerName,c.CustomerCode,typ.ItemcodeforLoading,i.description,i.revisionlevel,typ.DeliveryQty,i.uom,i.suom,
-			typ.CustomerServiceLoadDay,Concat('D',typ.PlanningLoadDay),typ.Ageing,typ.LiveorRetired,typ.ReasonforLoading,typ.Status,typ.DeliveryQty,typ.AdjustedinPOLoadday1,typ.AdjustedQty1,
+			select (('D' + typ.CustomerServiceLoadDay) + typ.ItemcodeforLoading),typ.CustomerName,c.CustomerCode,typ.ItemcodeforLoading,i.description,i.revisionlevel,typ.DeliveryQty,i.uom,i.suom,
+			typ.CustomerServiceLoadDay,('D' + typ.PlanningLoadDay),typ.Ageing,typ.LiveorRetired,typ.ReasonforLoading,typ.Status,typ.DeliveryQty,typ.AdjustedinPOLoadday1,typ.AdjustedQty1,
 			typ.AdjustedinPOLoadday2,typ.AdjustedQty2,typ.AdjustedinPOLoadday3,typ.AdjustedQty3,typ.AdjustedinPOLoadday4,typ.AdjustedQty4,typ.AdjustedinPOLoadday5,
 			typ.AdjustedQty5,typ.createdby,typ.modifiedby,GETDATE(),GETDATE() from @typDummyMaster typ,dbo.CustomerMaster c,dbo.ItemMaster i
 			where typ.CustomerName=c.CustomerName and typ.ItemcodeforLoading=i.itemcode and typ.ItemcodeforLoading in (select itemcode from [dbo].[ItemMaster] where LiveorRetired='L' and lc1=1 and lc2='F') and typ.ItemcodeforLoading in (select ItemCode from [dbo].[ComponentMaster])
 
-			select Concat(Concat('D',CustomerServiceLoadDay),ItemcodeforLoading) 'LoaddaywithItemcode',CustomerName,CustomerCode,ItemcodeforLoading,ITEMDESCRIPTION,RevisionLevel,DeliveryQty,UOM,SUOM,
-			CustomerServiceLoadDay 'CustomerServiceLoadDay',Concat('D',PlanningLoadDay) 'PlanningLoadDay',Ageing,LiveorRetired,ReasonforLoading,Status,CurrentQty,AdjustedinPOLoadday1,AdjustedQty1,
+			select (('D' + CustomerServiceLoadDay) + ItemcodeforLoading) 'LoaddaywithItemcode',CustomerName,CustomerCode,ItemcodeforLoading,ITEMDESCRIPTION,RevisionLevel,DeliveryQty,UOM,SUOM,
+			CustomerServiceLoadDay 'CustomerServiceLoadDay',('D' + PlanningLoadDay) 'PlanningLoadDay',Ageing,LiveorRetired,ReasonforLoading,Status,CurrentQty,AdjustedinPOLoadday1,AdjustedQty1,
 			AdjustedinPOLoadday2,AdjustedQty2,AdjustedinPOLoadday3,AdjustedQty3,AdjustedinPOLoadday4,AdjustedQty4,AdjustedinPOLoadday5,
 			AdjustedQty5,createdby,modifiedby,createddate,updateddate from @typDummyMaster typ
 			where typ.ItemcodeforLoading not in (select itemcode from [dbo].[ItemMaster] where LiveorRetired='L' and lc1=1 and lc2='F') or typ.CustomerName not in (select CustomerName from dbo.CustomerMaster) or typ.ItemcodeforLoading not in (select ItemCode from [dbo].[ComponentMaster])
@@ -578,14 +578,14 @@ BEGIN
 			typ.CustomerCode in (select CustomerCode from [dbo].[CustomerMaster]) and typ.ItemcodeforLoading in (select ItemCode from [dbo].[ComponentMaster]))
 
 
-			update [dbo].[DummyMaster] set LoaddaywithItemcode=Concat(Concat('D',typ.CustomerServiceLoadDay),typ.ItemcodeforLoading),CustomerName=typ.CustomerName,CustomerCode=c.CustomerCode,ItemcodeforLoading=typ.ItemcodeforLoading,ITEMDESCRIPTION=i.description,RevisionLevel=i.revisionlevel,DeliveryQty=typ.DeliveryQty,UOM=i.uom,SUOM=i.suom,
+			update [dbo].[DummyMaster] set LoaddaywithItemcode=(('D' + typ.CustomerServiceLoadDay) + typ.ItemcodeforLoading),CustomerName=typ.CustomerName,CustomerCode=c.CustomerCode,ItemcodeforLoading=typ.ItemcodeforLoading,ITEMDESCRIPTION=i.description,RevisionLevel=i.revisionlevel,DeliveryQty=typ.DeliveryQty,UOM=i.uom,SUOM=i.suom,
 			CustomerServiceLoadDay=typ.CustomerServiceLoadDay,PlanningLoadDay=typ.PlanningLoadDay,Ageing=typ.Ageing,LiveorRetired=typ.LiveorRetired,ReasonforLoading=typ.ReasonforLoading,Status=typ.Status,CurrentQty=typ.DeliveryQty,AdjustedinPOLoadday1=typ.AdjustedinPOLoadday1,AdjustedQty1=typ.AdjustedQty1,
 			AdjustedinPOLoadday2=typ.AdjustedinPOLoadday2,AdjustedQty2=typ.AdjustedQty2,AdjustedinPOLoadday3=typ.AdjustedinPOLoadday3,AdjustedQty3=typ.AdjustedQty3,AdjustedinPOLoadday4=typ.AdjustedinPOLoadday4,AdjustedQty4=typ.AdjustedQty4,AdjustedinPOLoadday5=typ.AdjustedinPOLoadday5,
 			AdjustedQty5=typ.AdjustedQty5,createdby=typ.createdby,modifiedby=typ.modifiedby,createddate=GETDATE(),updateddate=GETDATE()
 			from @typDummyMaster typ,dbo.CustomerMaster c,dbo.ItemMaster i
 			where typ.CustomerName=c.CustomerName and typ.ItemcodeforLoading=i.itemcode and typ.ItemcodeforLoading in (select itemcode from [dbo].[ItemMaster] where LiveorRetired='L' and lc1=1 and lc2='F') and typ.ItemcodeforLoading in (select ItemCode from [dbo].[ComponentMaster])
 
-			select Concat(Concat('D',CustomerServiceLoadDay),ItemcodeforLoading) 'LoaddaywithItemcode',CustomerName,CustomerCode,ItemcodeforLoading,ITEMDESCRIPTION,RevisionLevel,DeliveryQty,UOM,SUOM,
+			select (('D' + CustomerServiceLoadDay)+ ItemcodeforLoading) 'LoaddaywithItemcode',CustomerName,CustomerCode,ItemcodeforLoading,ITEMDESCRIPTION,RevisionLevel,DeliveryQty,UOM,SUOM,
 			CustomerServiceLoadDay,PlanningLoadDay,Ageing,LiveorRetired,ReasonforLoading,Status,CurrentQty,AdjustedinPOLoadday1,AdjustedQty1,
 			AdjustedinPOLoadday2,AdjustedQty2,AdjustedinPOLoadday3,AdjustedQty3,AdjustedinPOLoadday4,AdjustedQty4,AdjustedinPOLoadday5,
 			AdjustedQty5,createdby,modifiedby,createddate,updateddate from @typDummyMaster typ
