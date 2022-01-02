@@ -88,3 +88,48 @@ BEGIN
 END
 
 GO
+
+/****** Object:  StoredProcedure [dbo].[spMissingItemcode]    Script Date: 02-Jan-22 3:38:48 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE PROCEDURE [dbo].[spMissingItemcode]
+AS
+BEGIN	
+	SET NOCOUNT ON;	
+
+	BEGIN TRY
+		BEGIN TRANSACTION 
+
+			delete  from [dbo].[MissingItemcodeinAssemblyMaster]
+			delete from [dbo].[MissingItemcodeinComponentMaster]
+
+			insert into [dbo].[MissingItemcodeinAssemblyMaster](Itemcode)
+			select itemcode from [dbo].[ItemMaster] where lc1=2 and lc2='F' and liveorretired='L' and 
+			itemcode not in (select Itemcode from [dbo].[AssemblyMaster]) 
+			
+			insert into [dbo].[MissingItemcodeinComponentMaster](Itemcode)
+			select itemcode from [dbo].[ItemMaster] where lc1=1 and lc2='F' and liveorretired='L' and 
+			itemcode not in (select ItemCode from [dbo].[ComponentMaster]) 
+		
+			select (select count(Itemcode) from [dbo].[MissingItemcodeinAssemblyMaster]) 'MissingItemcodeinAssemblyMaster',
+			(select count(Itemcode) from [dbo].[MissingItemcodeinComponentMaster]) 'MissingItemcodeinComponentMaster'
+
+		COMMIT TRANSACTION;
+	END TRY
+	BEGIN CATCH
+		IF @@TRANCOUNT > 0 ROLLBACK TRANSACTION;
+
+        DECLARE @Message nvarchar(2048) = ERROR_MESSAGE();
+        DECLARE @Severity integer = ERROR_SEVERITY();
+        DECLARE @State integer = ERROR_STATE();
+
+        RAISERROR(@Message, @Severity, @State);
+        RETURN -1;
+	END CATCH	  
+END
+GO
