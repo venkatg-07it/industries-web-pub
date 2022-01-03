@@ -59,7 +59,8 @@
         "width": 200,
         "group": "poMaster",
         "required": true,
-        "type": "text",
+        "type": "dropdown",
+        "values": ["Fixed", "Fixed-Open"],
         "row": 2,
         "col": 3
     },
