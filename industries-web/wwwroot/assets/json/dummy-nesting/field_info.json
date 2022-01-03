@@ -1,0 +1,20 @@
+{
+    "fields": [
+        "S.No.",
+        "Load Day",
+        "Customer Name",        
+        "Item Code",
+        "PO Type",
+        "BATCH/INDIVIDUAL",
+        "Material",
+        "Nesting Name",
+        "Nesting Qty",
+        "Process Qty"           
+    ],
+    "groups": [
+        "nesting"
+    ],
+    "primary": [
+        {"name": "loadDay", "label": "Load Day"}       
+    ]
+}
