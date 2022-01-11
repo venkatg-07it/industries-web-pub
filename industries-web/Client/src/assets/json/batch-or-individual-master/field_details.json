@@ -1,0 +1,24 @@
+{
+    "S.No.": {
+        "label": "S.No.",
+        "name": "sNo",
+        "width": 100,
+        "pinned": "left"
+    },
+    "Item Code":{
+        "label": "Item Code",
+        "name": "itemcode",
+        "width": 615,        
+        "required": true,
+        "length": 75,
+        "type": "text"        
+    },
+    "BATCH/INDIVIDUAL":{
+        "label": "BATCH/INDIVIDUAL",
+        "name": "batchOrIndividual",
+        "width": 615,        
+        "type": "text",
+        "required": true,
+        "length": 1        
+    }   
+}
