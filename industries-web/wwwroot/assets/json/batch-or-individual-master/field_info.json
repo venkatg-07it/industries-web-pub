@@ -1,0 +1,13 @@
+{
+    "fields": [
+        "S.No.",
+        "Item Code",
+        "BATCH/INDIVIDUAL"
+    ],
+    "groups": [
+        "tableMaster"
+    ],
+    "primary": [
+        {"name": "itemcode", "label": "Item Code"}       
+    ]
+}
