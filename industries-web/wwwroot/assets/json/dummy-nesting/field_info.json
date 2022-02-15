@@ -2,8 +2,7 @@
     "fields": [
         "S.No.",
         "Load Day",
-        "Customer Name",
-        "S1 of RM",
+        "Customer Name",        
         "Item Code",
         "PO Type",
         "BATCH/INDIVIDUAL",
