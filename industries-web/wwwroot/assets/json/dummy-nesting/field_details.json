@@ -25,6 +25,16 @@
         "row": 1,
         "col": 1
     },
+    "S1 of RM":{
+        "label": "S1 of RM",
+        "name": "s1ofRm",
+        "width": 200,
+        "group": "nesting",
+        "type": "auto",
+        "required": true,
+        "row": 1,
+        "col": 2
+    },
     "Item Code":{
         "label": "Item Code",
         "name": "itemcode",
