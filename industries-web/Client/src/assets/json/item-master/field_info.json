@@ -76,6 +76,60 @@
         "itemMaster"
     ],
     "primary": [
-        {"name": "itemcode", "label": "Item Code"}
-    ]
+        {
+            "name": "itemcode",
+            "label": "Item Code"
+        }
+    ],
+    "qaForm": {
+        "fields": [
+            [
+                "Customer Name",
+                "Customer Code",
+                "Item Code",
+                "Description"
+            ],
+            [
+                "Reference Standard",
+                "Equivalent S Item Code",
+                "Live/Retired",
+                "Revision Level"
+            ],
+            [
+                "UOM",
+                "SUOM",
+                "LC-1",
+                "LC-2",
+                "Process Revision Level"
+            ],
+            [
+                "Finish Type",
+                "Surface Preparation",
+                "Primer Colour",
+                "Primer DFT"
+            ],
+            [
+                "IMO Colour",
+                "IMO DFT",
+                "Top Coat Colour",
+                "Top Coat DFT",
+                "Special Finish Details"
+            ]
+        ],
+        "editableFields": [
+            [
+                "QUALITY FLAG for Laser/TPP",
+                "Inspection Criteria for Laser/TPP",
+                "Qty to be Inspected for Laser/TPP"
+            ],
+            [
+                "QUALITY FLAG for Other than Laser/TPP",
+                "Inspection Criteria for Other than Laser/TPP",
+                "Qty to be Inspected for Other than Laser/TPP"
+            ],
+            [
+                "Remarks"
+            ]
+        ]
+    }
 }

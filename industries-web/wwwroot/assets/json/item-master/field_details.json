@@ -518,6 +518,7 @@
         "width": 100,
         "group": "itemMaster",
         "type": "text",
+        "length": 1,
         "row": 18,
         "col": 2
     },
@@ -526,7 +527,9 @@
         "name": "inspectionCriteriaforLaserOrTpp",
         "width": 20,
         "group": "itemMaster",
-        "type": "text",
+        "type": "dropdown",
+        "values": ["","All", "Batch Qty"],
+        "default": "",
         "row": 18,
         "col": 3
     },
@@ -545,6 +548,7 @@
         "width": 100,
         "group": "itemMaster",
         "type": "text",
+        "length": 1,
         "row": 19,
         "col": 2
     },
@@ -553,7 +557,9 @@
         "name": "inspectionCriteriaforOtherthanLaserOrTpp",
         "width": 100,
         "group": "itemMaster",
-        "type": "text",
+        "type": "dropdown",
+        "values": ["","All", "Batch Qty"],
+        "default": "",
         "row": 19,
         "col": 3
     },
