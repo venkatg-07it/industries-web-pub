@@ -8,6 +8,6 @@
         "tableMaster"
     ],
     "primary": [
-        {"name": "itemcode", "label": "Item Code"}       
+        {"name": "partnumber", "label": "Item Code"}       
     ]
 }
