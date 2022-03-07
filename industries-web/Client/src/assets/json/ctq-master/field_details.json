@@ -19,6 +19,13 @@
         "type": "auto",
         "required": true
     },
+    "Process":{
+        "label": "Process",
+        "name": "process",
+        "width": 200,        
+        "type": "text",
+        "required": true
+    },
     "Description":{
         "label": "Description",
         "name": "description",
@@ -56,14 +63,7 @@
         "type": "text"
     },
     "Repeated Columns": {
-        "fields": {
-            "Process":{
-                "label": "Process",
-                "name": "process",
-                "width": 200,        
-                "type": "text",
-                "required": true
-            },
+        "fields": {            
             "Dim":{
                 "label": "Dim",
                 "name": "dim",

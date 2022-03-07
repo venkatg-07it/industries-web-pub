@@ -2,6 +2,7 @@
     "fields": [        
         "Customer",
         "Item Code",
+        "Process",
         "Description",
         "Revision",
         "Drawing No",
@@ -9,8 +10,7 @@
         "Drawing Projection",
         "Remarks"
     ],    
-    "repeatedFields": [
-        "Process",
+    "repeatedFields": [        
         "Dim",
         "Min",
         "Max"
