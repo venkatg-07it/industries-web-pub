@@ -528,7 +528,7 @@
         "width": 20,
         "group": "itemMaster",
         "type": "dropdown",
-        "values": ["","All", "Batch Qty", "Green Channel"],
+        "values": ["","All", "Batch Qty", "Green channel"],
         "default": "",
         "row": 18,
         "col": 3
@@ -558,7 +558,7 @@
         "width": 100,
         "group": "itemMaster",
         "type": "dropdown",
-        "values": ["","All", "Batch Qty", "Green Channel"],
+        "values": ["","All", "Batch Qty", "Green channel"],
         "default": "",
         "row": 19,
         "col": 3
