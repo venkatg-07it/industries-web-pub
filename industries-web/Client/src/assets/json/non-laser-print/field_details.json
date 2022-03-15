@@ -29,7 +29,7 @@
     },
     "Batch/Individual":{
         "label": "Batch/Individual",
-        "name": "BatchOrIndividual",
+        "name": "batchOrIndividual",
         "width": 180                
     },
     "Customer":{
