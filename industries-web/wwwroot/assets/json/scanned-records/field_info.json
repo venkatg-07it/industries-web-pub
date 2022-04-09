@@ -8,7 +8,8 @@
         "Scanned Qty",
         "Quantity",
         "Batch/Individual",
-        "Nesting No"
+        "Nesting No",
+        "Process No"
     ],   
     "repeatedFields": [        
         "Process"      
