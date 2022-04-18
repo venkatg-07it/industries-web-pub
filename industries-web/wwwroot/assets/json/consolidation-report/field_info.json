@@ -1,4 +1,12 @@
 {
+    "check-list": {
+        "fields": [            
+            "Item Code",
+            "Item Description",
+            "CTQ Master",
+            "CTQ Flag"
+        ]
+    },
     "load-day": {
         "fields": [
             "S.No.",

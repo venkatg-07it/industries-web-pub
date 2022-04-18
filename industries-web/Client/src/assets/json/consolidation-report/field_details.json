@@ -1,4 +1,28 @@
 {
+    "ctq-checklist": {
+        "fields": {
+            "Item Code":{
+                "label": "Item Code",
+                "name": "itemcode",
+                "width": 250                
+            },
+            "Item Description":{
+                "label": "Item Description",
+                "name": "itemdescription",
+                "width": 250                
+            },
+            "CTQ Master":{
+                "label": "CTQ Master",
+                "name": "ctqmaster",
+                "width": 250                
+            },
+            "CTQ Flag":{
+                "label": "CTQ Flag",
+                "name": "ctqflag",
+                "width": 250                
+            }
+        }
+    },
     "load-day": {
         "title": "LOAD DAY LIST",
         "fields": {
@@ -760,4 +784,5 @@
             }
         }
     }
+    
 }
