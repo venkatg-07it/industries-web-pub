@@ -1,6 +1,7 @@
 {
-    "check-list": {
-        "fields": [            
+    "ctq-checklist": {
+        "fields": [           
+            "S.No.", 
             "Item Code",
             "Item Description",
             "CTQ Master",

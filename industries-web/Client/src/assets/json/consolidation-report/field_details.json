@@ -1,25 +1,32 @@
 {
     "ctq-checklist": {
+        "title": "CTQ CHECK LIST",
         "fields": {
+            "S.No.": {
+                "label": "S.No.",
+                "name": "sNo",
+                "width": 100,
+                "pinned": "left"
+            },
             "Item Code":{
                 "label": "Item Code",
                 "name": "itemcode",
-                "width": 250                
+                "width": 300                
             },
             "Item Description":{
                 "label": "Item Description",
                 "name": "itemdescription",
-                "width": 250                
+                "width": 300                
             },
             "CTQ Master":{
                 "label": "CTQ Master",
                 "name": "ctqmaster",
-                "width": 250                
+                "width": 285                
             },
             "CTQ Flag":{
                 "label": "CTQ Flag",
                 "name": "ctqflag",
-                "width": 250                
+                "width": 285                
             }
         }
     },
