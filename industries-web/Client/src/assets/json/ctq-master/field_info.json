@@ -16,6 +16,7 @@
         "Max"
     ],
     "primary": [
-        {"name": "itemcode", "label": "Item Code"}
+        {"name": "itemcode", "label": "Item Code"},
+        {"name": "process", "label": "Process"}
     ]
 }
