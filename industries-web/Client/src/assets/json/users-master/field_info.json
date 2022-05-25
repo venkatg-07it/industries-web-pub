@@ -1,0 +1,16 @@
+{
+    "fields": [
+        "S.No.",
+        "Name",
+        "Department",
+        "Login ID",
+        "Password",
+        "Live/Retired"
+    ],
+    "groups": [
+        "usersMaster"
+    ],
+    "primary": [
+        {"name": "loginId", "label": "Login ID"}       
+    ]
+}

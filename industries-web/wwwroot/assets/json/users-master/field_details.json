@@ -1,0 +1,53 @@
+{
+    "S.No.": {
+        "label": "S.No.",
+        "name": "sNo",
+        "width": 100,
+        "pinned": "left"
+    },
+    "Name":{
+        "label": "Name",
+        "name": "name",
+        "width": 250,
+        "group": "assemblyMaster",
+        "type": "text",
+        "row": 1,
+        "col": 1
+    },
+    "Department":{
+        "label": "Department",
+        "name": "department",
+        "width": 200,
+        "group": "assemblyMaster",
+        "type": "text",
+        "row": 1,
+        "col": 2
+    },
+    "Login ID": {
+        "label": "Login ID",
+        "name": "loginId",
+        "width": 200,
+        "group": "assemblyMaster",
+        "type": "text",
+        "row": 2,
+        "col": 1
+    },
+    "Password": {
+        "label": "Password",
+        "name": "password",
+        "width": 200,
+        "group": "assemblyMaster",
+        "type": "text",
+        "row": 2,
+        "col": 2
+    },
+    "Live/Retired": {
+        "label": "Live/Retired",
+        "name": "liveorRetired",
+        "width": 150,
+        "group": "assemblyMaster",
+        "type": "text",
+        "row": 3,
+        "col": 1
+    }
+}
