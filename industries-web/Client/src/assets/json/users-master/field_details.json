@@ -7,7 +7,7 @@
     },
     "Name":{
         "label": "Name",
-        "name": "name",
+        "name": "username",
         "width": 250,
         "group": "assemblyMaster",
         "type": "text",
@@ -46,7 +46,8 @@
         "name": "liveorRetired",
         "width": 150,
         "group": "assemblyMaster",
-        "type": "text",
+        "type": "checkbox",
+        "value": "L",
         "row": 3,
         "col": 1
     }
