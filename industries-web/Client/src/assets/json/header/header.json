@@ -57,5 +57,6 @@
     {"name": "Missing List|Assembly", "link":"missing-assembly", "order": 1, "access": true },
     {"name": "Missing List|Component", "link":"missing-component", "order": 1, "access": true },
     {"name": "Admin|Manage Users", "link":"manage-users", "order": 1, "access": false },
-    {"name": "Admin|User Access", "link":"user-access", "order": 1, "access": false }
+    {"name": "Admin|User Access", "link":"user-access", "order": 1, "access": false },
+    {"name": "Admin|Delete", "link":"admin", "order": 1, "access": false }
 ]
