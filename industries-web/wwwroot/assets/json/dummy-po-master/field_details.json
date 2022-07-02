@@ -141,7 +141,9 @@
         "width": 200,
         "group": "dummyPoMaster",        
         "required": true,
-        "type": "text",
+        "type":"dropdown",
+        "values": ["","Stock", "Rejection", "Missing"],
+        "default": "",
         "row": 11,
         "col": 2
     },
