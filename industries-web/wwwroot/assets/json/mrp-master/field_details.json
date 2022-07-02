@@ -1,0 +1,87 @@
+{
+    "S.No.": {
+        "label": "S.No.",
+        "name": "sNo",
+        "width": 70,
+        "pinned": "left"
+    },
+    "Customer Name": {
+        "label": "Customer Name",
+        "name": "customerName",
+        "width": 200,
+        "group": "poMaster",
+        "type": "auto",
+        "row": 1,
+        "col": 1
+    },
+    "Customer Code":{
+        "label": "Customer Code",
+        "name": "customerCode",
+        "width": 200,
+        "group": "poMaster",
+        "type": "text",
+        "disable": true,
+        "row": 1,
+        "col": 2
+    },   
+    "PO Item Code": {
+        "label": "PO Item Code",
+        "name": "poitemcode",
+        "width": 200,
+        "group": "poMaster",
+        "required": true,
+        "type": "text",
+        "row": 4,
+        "col": 1        
+    },
+    "Item Code for Loading (75)": {
+        "label": "Item Code for Loading (75)",
+        "name": "itemcodeforLoading",
+        "width": 200,
+        "group": "poMaster",
+        "required": true,
+        "type": "auto",
+        "row": 4,
+        "col": 2,
+        "pinned": "left"
+    },
+    "Item Description": {
+        "label": "Item Description",
+        "name": "itemdescription",
+        "width": 200,
+        "group": "poMaster",
+        "type": "text",
+        "row": 4,
+        "col": 3
+    },
+    "Revision Level":{
+        "label": "Revision Level",
+        "name": "revisionLevel",
+        "width": 200,
+        "group": "poMaster",        
+        "row": 5,
+        "type": "text",
+        "col": 1
+    },    
+    "PO Delivery Qty": {
+        "label": "PO Delivery Qty",
+        "name": "podeliveryQty",
+        "width": 200,
+        "group": "poMaster",
+        "required": true,
+        "type": "number",
+        "row": 6,
+        "col": 1
+    },    
+    "Remarks": {
+        "label": "Remarks",
+        "name": "remarks",
+        "width": 200,
+        "group": "poMaster",
+        "type": "text",
+        "row": 11,
+        "col": 3
+    }
+
+    
+}
