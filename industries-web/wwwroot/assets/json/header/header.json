@@ -35,6 +35,7 @@
     {"name": "Master|Excel Export|PO Item Code Match", "link":"po-item-code-match-export", "order": 10, "access": true, "device": "web"  },
     {"name": "Master|Excel Export|Batch or Individual", "link":"batch-or-individual-master-export", "order": 11, "access": true, "device": "web"  },
     {"name": "Master|Excel Export|CTQ Master", "link":"ctq-master-export", "order": 12, "access": true, "device": "web"  },
+    {"name": "Master|Excel Export|Nesting Master", "link":"nesting-master-export", "order": 12, "access": false, "device": "web"  },
     {"name": "Consolidation Report|PO", "link":"consolidation-report", "order": 1, "access": true, "device": "web"  },
     {"name": "Consolidation Report|Dummy PO", "link":"dummy-consolidation-report", "order": 2, "access": true, "device": "web"  },
     {"name": "PO|Nesting", "link":"nesting", "order": 1, "access": true, "device": "web"  },
