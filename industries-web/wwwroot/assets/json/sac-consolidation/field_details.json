@@ -1,0 +1,44 @@
+{
+    "S.No.": {
+        "label": "S.No.",
+        "name": "sNo",
+        "width": 70,
+        "pinned": "left"
+    },    
+    "Item Code": {
+        "label": "Item Code",
+        "name": "itemcode",
+        "width": 400,
+        "group": "sac",
+        "type": "text",
+        "row": 2,
+        "col": 1
+    },    
+    "Qty": {
+        "label": "Qty",
+        "name": "qty",
+        "width": 200,
+        "group": "sac",
+        "type": "text",
+        "row": 3,
+        "col": 1
+    },
+    "LC-1": {
+        "label": "LC-1",
+        "name": "lc1",
+        "width": 200,
+        "group": "sac",
+        "type": "text",
+        "row": 4,
+        "col": 1
+    },
+    "LC-2": {
+        "label": "LC-2",
+        "name": "lc2",
+        "width": 200,
+        "group": "sac",
+        "type": "text",
+        "row": 4,
+        "col": 1
+    }
+}

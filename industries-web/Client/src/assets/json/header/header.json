@@ -59,6 +59,7 @@
     {"name": "Missing List|Component", "link":"missing-component", "order": 1, "access": true, "device": "web"  },
     {"name": "MRP|Load", "link":"mrp-load", "order": 1, "access": false, "device": "web"  },
     {"name": "MRP|Consolidation", "link":"mrp-cr", "order": 1, "access": false, "device": "web"  },
+    {"name": "SAC|Consolidation", "link":"sac-cr", "order": 1, "access": false, "device": "web"  },
     {"name": "Admin|Manage Users", "link":"manage-users", "order": 1, "access": false, "device": "web" },
     {"name": "Admin|User Access", "link":"user-access", "order": 1, "access": false, "device": "web" },
     {"name": "Admin|Delete", "link":"admin", "order": 1, "access": false, "device": "web" },       

@@ -1,0 +1,16 @@
+{
+    "fields": [
+        "S.No.",    
+        "Item Code",        
+        "Qty",
+        "LC-1",
+        "LC-2"
+    ],
+    "groups": [
+        "sac"
+    ],
+    "primary": [
+        {"name": "itemcode", "label": "Item Code"},        
+        {"name": "qty", "label": "Qty"}
+    ]
+}
