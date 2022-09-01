@@ -69,6 +69,15 @@
         "row": 3,
         "col": 2
     },
+    "Short Form": {
+        "label": "Short Form",
+        "name": "shortForm",
+        "width": 200,
+        "group": "customerMaster",
+        "type": "text",
+        "row": 3,
+        "col": 2
+    },
     "Remarks": {
         "label": "Remarks",
         "name": "remarks",
@@ -78,4 +87,5 @@
         "row": 4,
         "col": 2
     }
+    
 }
