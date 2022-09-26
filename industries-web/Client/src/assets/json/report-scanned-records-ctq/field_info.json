@@ -1,0 +1,15 @@
+{
+    "fields": [
+        "S.No.",
+        "Position",
+        "Created By",
+        "Created Date",
+        "Inspector Name"
+    ],
+    "groups": [
+        "reports"
+    ],
+    "primary": [
+        {"name": "Position", "label": "Position"}    
+    ]
+}

@@ -1,0 +1,71 @@
+{
+    "components": [
+        {
+            "label": "Customer",
+            "id": "customer",
+            "data": [],
+            "param": [],
+            "value": "",
+            "type": "auto"
+        },
+        {
+            "label": "Item Code",
+            "id": "itemCd",
+            "data": [],
+            "param": [
+                "customer"
+            ],
+            "value": "",
+            "type": "auto"
+        },
+        {
+            "label": "Load Day",
+            "id": "loadDay",
+            "data": [],
+            "param": [
+                "itemCd"
+            ],
+            "value": "",
+            "type": "auto"
+        },
+        {
+            "label": "Process",
+            "id": "process",
+            "data": [],
+            "param": [
+                "itemCd",
+                "loadDay"
+            ],
+            "value": "",
+            "type": "auto"
+        },
+        {
+            "label": "Nesting No.",
+            "id": "nestingNo",
+            "data": [],
+            "param": [
+                "itemCd",
+                "loadDay",
+                "process"
+            ],
+            "value": "",
+            "type": "auto"
+        },
+        {
+            "label": "Is Laser?",
+            "id": "isLaser",
+            "data": [],
+            "param": [],
+            "value": "",
+            "type": "check"
+        },
+        {
+            "label": "Load",
+            "id": "load",
+            "data": [],
+            "param": [],
+            "value": "",
+            "type": "button"
+        }
+    ]
+}

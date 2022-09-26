@@ -1,0 +1,14 @@
+{
+    "fields": [
+        "S.No.",
+        "Position",
+        "Created By",
+        "Created Date"
+    ],
+    "groups": [
+        "reports"
+    ],
+    "primary": [
+        {"name": "Position", "label": "Position"}    
+    ]
+}

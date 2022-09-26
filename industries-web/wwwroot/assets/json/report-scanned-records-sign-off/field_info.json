@@ -1,0 +1,15 @@
+{
+    "fields": [
+        "S.No.",
+        "Acceptor Name",
+        "Received Qty",
+        "Signed Date",
+        "Total Qty"
+    ],
+    "groups": [
+        "reports"
+    ],
+    "primary": [
+        {"name": "Position", "label": "Position"}    
+    ]
+}

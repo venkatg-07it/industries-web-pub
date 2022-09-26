@@ -1,0 +1,44 @@
+{
+    "S.No.": {
+        "label": "S.No.",
+        "name": "sNo",
+        "width": 70,
+        "pinned": "left"
+    },
+    "Acceptor Name":{
+        "label": "Acceptor Name",
+        "name": "acceptorname",
+        "width": 200,
+        "group": "reports",
+        "type": "text",
+        "row": 1,
+        "col": 1
+    },
+    "Received Qty":{
+        "label": "Received Qty",
+        "name": "receivedqty",
+        "width": 200,
+        "group": "reports",
+        "type": "text",
+        "row": 1,
+        "col": 2
+    },
+    "Signed Date":{
+        "label": "Signed Date",
+        "name": "signeddate",
+        "width": 200,
+        "group": "reports",
+        "type": "text",
+        "row": 1,
+        "col": 1
+    },
+    "Total Qty":{
+        "label": "Total Qty",
+        "name": "totalqty",
+        "width": 200,
+        "group": "reports",
+        "type": "text",
+        "row": 1,
+        "col": 2
+    }     
+}
