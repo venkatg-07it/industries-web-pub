@@ -12,6 +12,7 @@
         "fields": [
             "S.No.",
             "Required Date",
+            "Customer Name",
             "Item Code",
             "Item Description",
             "Required Qty",
@@ -54,6 +55,7 @@
     },
     "component-list": {
         "fields": [
+            "Customer Name",
             "Item Code",
             "Item Description",
             "RM Code",

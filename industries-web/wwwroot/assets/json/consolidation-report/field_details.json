@@ -45,6 +45,12 @@
                 "width": 250,
                 "type" : "date"
             },
+            "Customer Name": {
+                "label": "Customer Name",
+                "name": "customername",
+                "width": 250,               
+                "type": "text"               
+            },
             "Item Code":{
                 "label": "Item Code",
                 "name": "poitemcode",
@@ -210,6 +216,12 @@
     "component-list": {
         "title": "COMPONENT LIST",
         "fields": {
+            "Customer Name": {
+                "label": "Customer Name",
+                "name": "customername",
+                "width": 250,               
+                "type": "text"               
+            },
             "Item Code":{
                 "label": "Item Code",
                 "name": "itemcode",

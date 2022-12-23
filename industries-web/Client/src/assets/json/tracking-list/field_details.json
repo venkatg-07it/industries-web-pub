@@ -15,6 +15,11 @@
         "name": "description",
         "width": 250                
     },
+    "Size 1":{
+        "label": "Size 1",
+        "name": "size1",
+        "width": 150                
+    },
     "Level Code 1":{
         "label": "Level Code 1",
         "name": "lc1",
