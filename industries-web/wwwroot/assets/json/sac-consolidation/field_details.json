@@ -5,9 +5,36 @@
         "width": 70,
         "pinned": "left"
     },    
+    "Assembly Number": {
+        "label": "Assembly Number",
+        "name": "assemblyNumber",
+        "width": 400,
+        "group": "sac",
+        "type": "text",
+        "row": 2,
+        "col": 1
+    },    
+    "Assembly Description": {
+        "label": "Assembly Description",
+        "name": "assemblyDescription",
+        "width": 400,
+        "group": "sac",
+        "type": "text",
+        "row": 2,
+        "col": 1
+    },    
     "Item Code": {
         "label": "Item Code",
         "name": "itemcode",
+        "width": 400,
+        "group": "sac",
+        "type": "text",
+        "row": 2,
+        "col": 1
+    },    
+    "Item Code Description": {
+        "label": "Item Code Description",
+        "name": "itemcodeDescription",
         "width": 400,
         "group": "sac",
         "type": "text",

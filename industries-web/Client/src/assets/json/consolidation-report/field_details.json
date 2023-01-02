@@ -45,11 +45,10 @@
                 "width": 250,
                 "type" : "date"
             },
-            "Customer Name": {
+            "Customer Name":{
                 "label": "Customer Name",
                 "name": "customername",
-                "width": 250,               
-                "type": "text"               
+                "width": 250                
             },
             "Item Code":{
                 "label": "Item Code",
@@ -120,7 +119,7 @@
                 "label": "Item Description",
                 "name": "description",
                 "width": 250                
-            },
+            },           
             "Level Code 1":{
                 "label": "Level Code 1",
                 "name": "lc1",
@@ -216,12 +215,6 @@
     "component-list": {
         "title": "COMPONENT LIST",
         "fields": {
-            "Customer Name": {
-                "label": "Customer Name",
-                "name": "customername",
-                "width": 250,               
-                "type": "text"               
-            },
             "Item Code":{
                 "label": "Item Code",
                 "name": "itemcode",
@@ -230,6 +223,11 @@
             "Item Description":{
                 "label": "Item Description",
                 "name": "description",
+                "width": 250                
+            },
+            "Customer Name":{
+                "label": "Customer Name",
+                "name": "customername",
                 "width": 250                
             },
             "RM Code":{
