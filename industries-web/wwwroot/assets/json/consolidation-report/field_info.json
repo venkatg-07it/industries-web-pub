@@ -12,6 +12,7 @@
         "fields": [
             "S.No.",
             "Required Date",
+            "Customer Name",
             "Item Code",
             "Item Description",
             "Required Qty",
@@ -56,6 +57,7 @@
         "fields": [
             "Item Code",
             "Item Description",
+            "Customer Name",
             "RM Code",
             "RM Description",
             "Level Code 1",

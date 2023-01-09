@@ -1,7 +1,10 @@
 {
     "fields": [
         "S.No.",    
-        "Item Code",        
+        "Assembly Number",
+        "Assembly Description",
+        "Item Code",
+        "Item Code Description",     
         "Qty",
         "LC-1",
         "LC-2"
