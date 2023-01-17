@@ -15,9 +15,9 @@
         "name": "description",
         "width": 250                
     },
-    "Customer Name":{
-        "label": "Customer Name",
-        "name": "customername",
+    "Size 1":{
+        "label": "Size 1",
+        "name": "size1",
         "width": 250                
     },
     "Level Code 1":{

@@ -5,9 +5,9 @@
         "width": 70,
         "pinned": "left"
     },
-    "Position.":{
-        "label": "Position.",
-        "name": "Position",
+    "Position":{
+        "label": "Position",
+        "name": "position",
         "width": 200,
         "group": "reports",
         "type": "text",
